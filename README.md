@@ -2,6 +2,10 @@
 
 SynLoco is a versatile full-stack project management platform inspired by Jira. Designed to cater to agile and traditional teams, SynLoco streamlines workflows with a range of powerful features, all presented through an intuitive and customizable interface.
 
+## Screenshot
+
+![SynLoco Screenshot](public/screenshot.png)
+
 ## Features
 
 - **Kanban Boards**: Visualize workflows and manage tasks effortlessly.
@@ -10,6 +14,10 @@ SynLoco is a versatile full-stack project management platform inspired by Jira. 
 - **Reporting**: Gain insights with comprehensive, data-driven reports.
 - **Team Collaboration**: Communicate effectively and collaborate seamlessly.
 - **Customizable Workflows**: Tailor the platform to fit your team's needs.
+
+## Demo
+
+You can view a live demo of the application [here](https://www.synloco.co)
 
 ## Tech Stack
 
