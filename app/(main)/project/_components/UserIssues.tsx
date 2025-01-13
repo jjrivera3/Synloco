@@ -1,0 +1,56 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Suspense } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import { getUserIssues } from "@/actions/issues";
+import IssueCard from "@/components/IssueCard";
+import { User } from "@/entities/User";
+
+export default async function UserIssues({ userId }: User) {
+  //@ts-expect-error will fix later
+  const issues = await getUserIssues(userId);
+
+  if (issues.length === 0) {
+    return null;
+  }
+
+  const assignedIssues = issues.filter(
+    (issue: any) => issue.assignee.clerkUserId === userId
+  );
+  const reportedIssues = issues.filter(
+    (issue: any) => issue.reporter.clerkUserId === userId
+  );
+
+  return (
+    <>
+      <h1 className="text-3xl font-medium gradient-title3 mb-4">My Issues</h1>
+
+      <Tabs defaultValue="assigned" className="w-full">
+        <TabsList>
+          <TabsTrigger value="assigned">Assigned to You</TabsTrigger>
+          <TabsTrigger value="reported">Reported by You</TabsTrigger>
+        </TabsList>
+        <TabsContent value="assigned">
+          <Suspense fallback={<div>Loading...</div>}>
+            <IssueGrid issues={assignedIssues} />
+          </Suspense>
+        </TabsContent>
+        <TabsContent value="reported">
+          <Suspense fallback={<div>Loading...</div>}>
+            <IssueGrid issues={reportedIssues} />
+          </Suspense>
+        </TabsContent>
+      </Tabs>
+    </>
+  );
+}
+
+function IssueGrid({ issues }: any) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {issues.map((issue: any) => (
+        <IssueCard key={issue.id} issue={issue} showStatus />
+      ))}
+    </div>
+  );
+}

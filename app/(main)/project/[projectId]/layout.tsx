@@ -1,0 +1,13 @@
+import { PropsWithChildren, Suspense } from "react";
+
+const ProjectLayout = async ({ children }: PropsWithChildren) => {
+  return (
+    <div className="mx-auto">
+      <Suspense fallback={<span>Loading Projects...</span>}>
+        {children}
+      </Suspense>
+    </div>
+  );
+};
+
+export default ProjectLayout;
