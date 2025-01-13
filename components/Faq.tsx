@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "What is SynLoco?",
     answer:
-      "SynLoco is a powerful project management tool designed to help teams organize, track, and manage their work efficiently. It combines intuitive design with robust features to streamline your workflow and boost productivity.",
+      "Synloco is a dynamic platform designed to unite people, ideas, and processes to drive seamless collaboration and forward progress. Built on the principles of synchronization and momentum, Synloco creates a space where innovation thrives and connections flourish. It serves as a hub for aligning goals and fostering efficient workflows, empowering individuals and teams to achieve more together. The name Synloco reflects its mission, blending the ideas of togetherness and movement into a single, cohesive identity. By harmonizing the strengths of many into one fluid system, Synloco embodies the spirit of collective growth and progress.",
   },
   {
     question: "How does SynLoco compare to other project management tools?",
